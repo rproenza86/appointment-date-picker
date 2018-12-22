@@ -1,0 +1,79 @@
+.dr-ui-test-drive {
+    padding: 10px;
+}
+
+.dr-ui-test-drive iframe.map {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.dr-ui-test-drive .address {
+    text-align: center;
+    margin-top: 0;
+}
+
+.dr-ui-test-drive .dealer-name {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.dr-ui-test-drive .btn-link {
+    color: var(--link-color);
+}
+
+.dr-ui-test-drive .date-pickerdiv[style] {
+    /*  Due to our inability to control the inline styling of the DatePicker component,
+     we are forced to enforce our styling on those elements using !important. */
+    display: block !important;
+    font-family: var(--primary-font-family) !important;
+    font-size: var(--default-input-field-font-size) !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    height: auto !important;
+    line-height: inherit !important;
+}
+.dr-ui-test-drive .date-picker input[type='text'] {
+    display: block !important;
+    height: inherit !important;
+}
+.dr-ui-test-drive .date-pickerhr[style] {
+    display: none !important;
+}
+
+.dr-ui-test-drive i.sp-tdf-iconDate {
+    font-size: $default-input-field-font-size;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+@media (min-width: 801px) {
+    .dr-ui-test-drive .test-drive-form {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    .dr-ui-test-drive .new-test-drive-form {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .dr-ui-test-drive i.sp-tdf-iconDate {
+        right: 9px;
+    }
+}
+
+.dr-ui-test-drive .fa-calendar {
+    color: var(--link-color);
+}
+
+.dr-ui-test-drive .dr-sp-test-drive-error {
+    padding-top: 2%;
+}
+
+.dr-ui-test-drive .message-error {
+    color: #a94442;
+}

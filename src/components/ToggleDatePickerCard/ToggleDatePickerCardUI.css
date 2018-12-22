@@ -1,0 +1,91 @@
+/* Ref: http://oocss.org/spec/css-mixins.html */
+/* @mixin dr-ui-toggle-date-picker-card-animation-config {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+} */
+
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card {
+    width: 320px;
+    height: 80px;
+}
+
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab {
+    width: 25%;
+    height: 100%;
+    text-transform: uppercase;
+}
+
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab + .tab,
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab + .dr-ui-date-picker-button {
+    margin-left: -1px;
+}
+
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-day-of-week,
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-month {
+    opacity: 0.75;
+    font-size: var(--xsmall-font-size);
+}
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-day {
+    font-size: var(--medium-font-size);
+}
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-day-of-week.rightFadeIn,
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-month.rightFadeIn,
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-day.rightFadeIn {
+    animation-name: rightFadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-day-of-week.leftFadeIn,
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-month.leftFadeIn,
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab .dr-ui-day.leftFadeIn {
+    animation-name: leftFadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .dr-ui-date-picker-button {
+    display: flex;
+    cursor: pointer;
+    width: 25%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    font-size: var(--medium-font-size);
+    padding: 5px;
+    border: 1px solid var(--default-hr-border-color);
+    border-radius: 2px;
+}
+ .toggle-button-panel-container.dr-ui-toggle-date-picker-card .dr-ui-date-picker-button .dr-ui-inner {
+        text-align: center;
+        width: 60px;
+        position: relative;
+        top: 28px;
+    }
+
+@keyframes rightFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes leftFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,39 @@
+.dr-ui-test-drive-confirmation {
+    padding: 10px;
+}
+
+.dr-ui-test-drive-confirmation iframe.map {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.dr-ui-test-drive-confirmation .test-drive-confirmation-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dr-ui-test-drive-confirmation .test-drive-confirmation,
+.dr-ui-test-drive-confirmation .test-drive-confirmation-schedule {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dr-ui-test-drive-confirmation .dr-ui-test-drive-confirmation .dealer-info-map-link,
+.dr-ui-test-drive-confirmation .reschedule-test-drive {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dr-ui-test-drive-confirmation .dealer-name,
+.dr-ui-test-drive-confirmation .dealer-phone {
+    text-align: center;
+}
+
+.dr-ui-test-drive-confirmation .dealer-address,
+.dr-ui-test-drive-confirmation .reschedule-test-drive-text {
+    text-align: center;
+    color: var(--link-color);
+}
