@@ -35,9 +35,15 @@ var ToggleDatePickerCardUI = /** @class */ (function (_super) {
         var analyticsTag = this.props.analyticsTag;
         return (React.createElement(ToggleButtonPanelUI, { activeButtonIdOrClass: this.state.activeClassName || '', analyticsTag: analyticsTag, className: "dr-ui-toggle-date-picker-card", id: this.props.id, renderButton: this.renderButton, toggleButtons: this.state.toggleButtons || [] }));
     };
-    ToggleDatePickerCardUI.prototype.shouldComponentUpdate = function () {
-        var shouldRerender = this.rerender;
-        this.rerender = false;
+    ToggleDatePickerCardUI.prototype.shouldComponentUpdate = function (nextProps, nextState) {
+        var shouldRerender = this.rerender || this.isRerenderNeeded(nextProps, nextState);
+        if (shouldRerender) {
+            this.setState(tslib_1.__assign({}, this.state, {
+                selectedDate: this.normalizeDateTme(nextProps.selectedDate),
+                startDate: this.normalizeDateTme(nextProps.startDate)
+            }));
+            this.rerender = false;
+        }
         return shouldRerender;
     };
     ToggleDatePickerCardUI.prototype.isRerenderNeeded = function (nextProps, nextState) {
@@ -50,8 +56,12 @@ var ToggleDatePickerCardUI = /** @class */ (function (_super) {
         if (!nextProps.startDate || !nextState.startDate) {
             return true;
         }
-        var isRerenderNeeded = nextProps.selectedDate.getTime() !== nextState.selectedDate.getTime() ||
-            nextProps.startDate.getTime() !== nextState.startDate.getTime();
+        var nextPropsSelectedDate = this.normalizeDateTme(nextProps.selectedDate);
+        var nextPropsStartDate = this.normalizeDateTme(nextProps.startDate);
+        var nextStateSelectedDate = this.normalizeDateTme(nextState.selectedDate);
+        var nextStateStartDate = this.normalizeDateTme(nextState.startDate);
+        var isRerenderNeeded = nextPropsSelectedDate.getTime() !== nextStateSelectedDate.getTime() ||
+            nextPropsStartDate.getTime() !== nextStateStartDate.getTime();
         return isRerenderNeeded;
     };
     ToggleDatePickerCardUI.prototype.normalizeDateTme = function (date) {

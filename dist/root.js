@@ -4,12 +4,15 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import './css/index.css';
-// import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore';
-var rootElm = document.getElementById('root');
-export function initApp(store, children, rootElement) {
+export var EventsDistributor;
+export function initApp(store, rootElementName, EventsDistributorParam, children) {
+    if (rootElementName === void 0) { rootElementName = 'root'; }
     if (children === void 0) { children = React.createElement(App, null); }
-    if (rootElement === void 0) { rootElement = rootElm; }
+    var rootElement = document.getElementById(rootElementName);
+    if (EventsDistributorParam) {
+        EventsDistributor = EventsDistributorParam;
+    }
     ReactDOM.render(React.createElement(Provider, { store: store },
         React.createElement(MuiThemeProvider, null, children)), rootElement);
 }
@@ -37,4 +40,3 @@ export function createStore(state) {
     var initStore = configureStore(initialState);
     return initStore;
 }
-// registerServiceWorker();

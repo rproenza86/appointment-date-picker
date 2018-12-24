@@ -8,7 +8,7 @@ export default function configureStore(preloadedState: {}): Store {
     const reduxDevTools = typeof window === 'object' && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
     const composeEnhancers = reduxDevTools ?
         (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-            name: 'Test Drive Schedule'
+            name: 'Appointment Date Picker'
         }) : compose;
 
     const historyReducers = connectRouter(history);

@@ -33,7 +33,7 @@ export default class ToggleDatePickerCardUI extends React.Component<ToggleDatePi
     constructor(props: ToggleDatePickerCardProps);
     componentWillMount(): void;
     render(): JSX.Element;
-    shouldComponentUpdate(): boolean;
+    shouldComponentUpdate(nextProps: ToggleDatePickerCardProps, nextState: IToggleDatePickerCardState): boolean;
     private isRerenderNeeded;
     private normalizeDateTme;
     private renderPickADateButton;

@@ -6,17 +6,12 @@ import { IStateTree } from './../types';
 import { push } from 'connected-react-router';
 import { dispatchActionWithAnalytics } from './../middleware/analytics';
 import { EventsDistributor } from './../root';
+import { appName } from './../index';
 
 export const testDriveMiddleware = (store: Store<IStateTree>) => (next: any) => (action: any) => {
     next(action);
     if (EventsDistributor) {
-        const broadCastAction = {
-            ...action,
-            meta: {
-                appSource: '@rproenza/appointment-date-picker',
-                eventType: 'BROAD_CAST_ACTION'
-            }
-        }
+        const broadCastAction = { ...action, meta: { appSource: appName, eventType: 'BROAD_CAST_ACTION', state: store.getState() } };
         EventsDistributor.dispatch(broadCastAction);
     }
     const state = store.getState();

@@ -37,10 +37,10 @@ gulp.task('build-js', function () {
 
 gulp.task('copy-css', function () {
     gulp.src(['./src/components/**/*.css'])
-        .pipe(gulp.dest('./' + buildFolder + '/js/components/'));
+        .pipe(gulp.dest('./' + buildFolder + '/components/'));
     gulp.src(['./src/css/*.css'])
         .pipe(flatten())
-        .pipe(gulp.dest('./' + buildFolder + '/js/css/'));
+        .pipe(gulp.dest('./' + buildFolder + '/css/'));
 });
 
 gulp.task('watch', function () {

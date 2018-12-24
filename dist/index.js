@@ -3,9 +3,11 @@ import { createStore, initApp } from './root';
 var TestDriveCmp = TestDrive.Container;
 // Un comment next line while developing module
 // initApp(createStore());
+export var appName = 'AppointmentDatePicker';
 export var TestDriveActivity = {
-    TestDriveCmp: TestDriveCmp,
+    appName: appName,
     createStore: createStore,
-    initApp: initApp
+    initApp: initApp,
+    testDriveCmp: TestDriveCmp,
 };
 export default TestDriveActivity;

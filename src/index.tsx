@@ -6,9 +6,13 @@ const TestDriveCmp = TestDrive.Container;
 // Un comment next line while developing module
 // initApp(createStore());
 
-export const TestDriveActivity =  {
-    TestDriveCmp,
+export const appName = 'AppointmentDatePicker';
+
+export const TestDriveActivity = {
+    appName,
     createStore,
-    initApp
+    initApp,
+    testDriveCmp: TestDriveCmp,
 };
+
 export default TestDriveActivity;

@@ -74,9 +74,18 @@ export default class ToggleDatePickerCardUI extends React.Component<
         );
     }
 
-    public shouldComponentUpdate() {
-        const shouldRerender = this.rerender;
-        this.rerender = false;
+    public shouldComponentUpdate(nextProps: ToggleDatePickerCardProps, nextState: IToggleDatePickerCardState) {
+        const shouldRerender = this.rerender || this.isRerenderNeeded(nextProps, nextState);
+        if(shouldRerender){
+            this.setState({
+                ...this.state,
+                ...{
+                    selectedDate: this.normalizeDateTme(nextProps.selectedDate),
+                    startDate: this.normalizeDateTme(nextProps.startDate)
+                }
+            });
+            this.rerender = false;
+        }
         return shouldRerender;
     }
 
@@ -90,9 +99,13 @@ export default class ToggleDatePickerCardUI extends React.Component<
         if (!nextProps.startDate || !nextState.startDate) {
             return true;
         }
+        const nextPropsSelectedDate = this.normalizeDateTme(nextProps.selectedDate);
+        const nextPropsStartDate = this.normalizeDateTme(nextProps.startDate);
+        const nextStateSelectedDate = this.normalizeDateTme(nextState.selectedDate);
+        const nextStateStartDate = this.normalizeDateTme(nextState.startDate);
         const isRerenderNeeded =
-            nextProps.selectedDate.getTime() !== nextState.selectedDate.getTime() ||
-            nextProps.startDate.getTime() !== nextState.startDate.getTime();
+            nextPropsSelectedDate.getTime() !== nextStateSelectedDate.getTime() ||
+            nextPropsStartDate.getTime() !== nextStateStartDate.getTime();
         return isRerenderNeeded;
     }
 

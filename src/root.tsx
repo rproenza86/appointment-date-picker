@@ -11,13 +11,14 @@ import configureStore from './store/configureStore';
 
 export let EventsDistributor: GlobalEventDistributor;
 
-const rootElm = document.getElementById('root') as HTMLElement;
+
 export function initApp(
     store: Store,
-    children: any = <App />,
-    rootElement: HTMLElement = rootElm,
-    EventsDistributorParam?: GlobalEventDistributor
+    rootElementName: string = 'root',
+    EventsDistributorParam?: GlobalEventDistributor,
+    children: any = <App />
 ) {
+    const rootElement: HTMLElement = document.getElementById(rootElementName) as HTMLElement;
     if (EventsDistributorParam) {
         EventsDistributor = EventsDistributorParam;
     }
