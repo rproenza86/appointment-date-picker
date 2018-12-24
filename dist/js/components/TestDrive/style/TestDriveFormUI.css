@@ -1,0 +1,13 @@
+.dr-ui-new-test-drive-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dr-ui-new-test-drive-form   .dr-ui-input-section + .dr-ui-input-section {
+    padding-top: 28px;
+}
+
+.dr-ui-new-test-drive-form .dr-ui-control-header-text {
+    text-align: center;
+}

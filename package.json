@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "description": "NPM Module to schedule appointments using a complex ReactJS date picker design",
     "private": true,
-    "main": "dist/js/index.js",
+    "main": "dist/index.js",
     "scripts": {
         "start": "react-scripts-ts start",
-        "build": "react-scripts-ts build",
+        "build-ui": "react-scripts-ts build",
         "build-module": "gulp",
         "test": "react-scripts-ts test --env=jsdom",
         "eject": "react-scripts-ts eject",
@@ -24,6 +24,7 @@
     },
     "homepage": "https://github.com/rproenza86/appointment-date-picker#readme",
     "dependencies": {
+        "@rproenza/events-distributor": "^1.0.0",
         "@types/history": "^4.7.2",
         "@types/lodash": "^4.14.119",
         "@types/material-ui": "^0.21.5",

@@ -1,0 +1,22 @@
+import { TimeType } from './../components/ToggleTimeCard/ToggleTimeCardUI';
+import { IStateTree, ITestDrive } from './../types';
+export declare const getTestDrive: (state: IStateTree) => ITestDrive;
+export declare const getDayOrDefault: (state: IStateTree) => Date;
+export declare const getTimeOfDayOrDefault: (state: IStateTree) => TimeType;
+export declare const getDay: (state: IStateTree) => Date;
+export declare const getFirstName: (state: IStateTree) => string;
+export declare const getLastName: (state: IStateTree) => string;
+export declare const getMessage: (state: IStateTree) => string;
+export declare const getEmail: (state: IStateTree) => string;
+export declare const isCalculating: (state: IStateTree) => boolean;
+export declare const getPhone: (state: IStateTree) => string;
+export declare const getTimeOfDay: (state: IStateTree) => string;
+export declare const isTestDriveCompleted: (state: IStateTree) => boolean;
+export declare const isFailedToSchedule: (state: IStateTree) => boolean;
+export declare const getTestDriveDisplayInfo: (state: IStateTree) => {
+    isCompleted: boolean;
+    testDriveCardText: string;
+};
+export declare const getFirstNameFromForm: (state: IStateTree) => string;
+export declare const getMessageFromForm: (state: IStateTree) => string;
+export declare const getEmailFromForm: (state: IStateTree) => string;

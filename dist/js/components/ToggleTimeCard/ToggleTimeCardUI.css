@@ -1,0 +1,51 @@
+.dr-ui-toggle-time-picker-card {
+    display: flex;
+    margin-top: 10px;
+}
+
+.dr-ui-toggle-time-picker-card .toggle-time-title {
+    font-size: var(--medium-font-size);
+}
+
+.dr-ui-toggle-time-picker-card .tab {
+    height: 70px;
+    width: 108px;
+    min-height: 37px;
+    flex-grow: 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--default-hr-border-color);
+    border-radius: 2px;
+}
+.dr-ui-toggle-time-picker-card .tab + .tab {
+    margin-left: -1px;
+}
+.dr-ui-toggle-time-picker-card .tab.active {
+    font-weight: var(--active-tab-font-weight);
+    position: relative;
+}
+.dr-ui-toggle-time-picker-card .tab.active:after {
+    content: '';
+    width: 90%;
+    height: 5px;
+    background-color: var(--active-tab-indicator-color);
+    position: absolute;
+    left: 5%;
+    bottom: 5px;
+}
+/* TODO: Fix rule not working */
+.toggle-button-panel-container.dr-ui-toggle-date-picker-card .tab.inactive:hover {
+   background: rgba(0, 0, 255, 0.255);
+}
+.dr-ui-toggle-time-picker-card .tab.inactive {
+    border: 1px solid var(--inactive-border-color);
+    cursor: pointer;
+}
+.dr-ui-toggle-time-picker-card .tab .info-icon {
+    float: right;
+    width: 15px;
+    cursor: pointer;
+}

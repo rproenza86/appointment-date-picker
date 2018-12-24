@@ -1,0 +1,41 @@
+:root {
+  --link-color:var(--dr-test-drive--link-color,  red);
+  --primary-font-family:var(--dr-test-drive--primary-font-family,  fantasy);
+  --default-input-field-font-size:var(--dr-test-drive--default-input-field-font-size,  14px);
+  --medium-font-size:var(--dr-test-drive--medium-font-size,  16px);
+  --xsmall-font-size:var(--dr-test-drive--xsmall-font-size,  10px);
+  --gray3:var(--dr-test-drive--gray3,   grey);
+  --default-hr-border-color:var(--dr-test-drive--default-hr-border-color,  rgb(196, 196, 228));
+  --active-tab-font-weight:var(--dr-test-drive--active-tab-font-weight,  bold);
+  --inactive-border-color:var(--dr-test-drive--inactive-border-color,  rgb(166, 166, 255));
+  --active-tab-indicator-color:var(--dr-test-drive--active-tab-indicator-color,  blue);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,15 +1,26 @@
+import { GlobalEventDistributor } from '@rproenza/events-distributor/dist/src/globalEventDistributor';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
+
 import App from './components/App';
 import './css/index.css';
-// import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore';
 
+export let EventsDistributor: GlobalEventDistributor;
+
 const rootElm = document.getElementById('root') as HTMLElement;
-export function initApp(store: Store, children: any = <App />, rootElement: HTMLElement = rootElm) {
+export function initApp(
+    store: Store,
+    children: any = <App />,
+    rootElement: HTMLElement = rootElm,
+    EventsDistributorParam?: GlobalEventDistributor
+) {
+    if (EventsDistributorParam) {
+        EventsDistributor = EventsDistributorParam;
+    }
     ReactDOM.render(
         <Provider store={store}>
             <MuiThemeProvider>{children}</MuiThemeProvider>
@@ -41,4 +52,3 @@ export function createStore(state: {} | null = null) {
     const initStore = configureStore(initialState) as Store;
     return initStore;
 }
-// registerServiceWorker();

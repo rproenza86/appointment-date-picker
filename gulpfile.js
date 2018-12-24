@@ -13,7 +13,7 @@ var log = util.log;
 var tsProject = ts.createProject('tsconfig.json');
 
 var buildFolder = 'dist';
-var jsBuildFolder = buildFolder + '/js';
+var jsBuildFolder = buildFolder;
 var outputPath = './' + buildFolder + '/';
 
 var watchFiles = [
@@ -40,7 +40,7 @@ gulp.task('copy-css', function () {
         .pipe(gulp.dest('./' + buildFolder + '/js/components/'));
     gulp.src(['./src/css/*.css'])
         .pipe(flatten())
-        .pipe(gulp.dest('./' + buildFolder + '/css/'));
+        .pipe(gulp.dest('./' + buildFolder + '/js/css/'));
 });
 
 gulp.task('watch', function () {

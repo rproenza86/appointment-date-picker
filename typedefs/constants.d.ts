@@ -1,0 +1,25 @@
+export declare const ONE_DAY: number;
+export declare const ONE_YEAR: number;
+export declare const SUBMIT_TEST_DRIVE = "SUBMIT_TEST_DRIVE";
+export declare const TEST_DRIVE_SUBMIT_SUCCESS = "TEST_DRIVE_SUBMIT_SUCCESS";
+export declare const SCHEDULE_TEST_DRIVE_REQUEST = "SCHEDULE_TEST_DRIVE_REQUEST";
+export declare const SCHEDULE_TEST_DRIVE_SUCCESS = "SCHEDULE_TEST_DRIVE_SUCCESS";
+export declare const SCHEDULE_TEST_DRIVE_FAILURE = "SCHEDULE_TEST_DRIVE_FAILURE";
+export declare const ROUTE_TEST_DRIVE = "ROUTE_TEST_DRIVE";
+export declare const ROUTE_TEST_DRIVE_CONFIRMATION = "ROUTE_TEST_DRIVE_CONFIRMATION";
+export declare const ROUTE_LEAD_FORM = "ROUTE_LEAD_FORM";
+export declare const UPDATE_TEST_DRIVE_DAY = "UPDATE_TEST_DRIVE_DAY";
+export declare const UPDATE_TEST_DRIVE_TIME = "UPDATE_TEST_DRIVE_TIME";
+export declare const RouteValues: {
+    DEAL_SUMMARY: string;
+    CREDIT: string;
+    CREDIT_DECISION_RESULTS: string;
+    HELP_CONTACT: string;
+    LEAD_FORM: string;
+    MESSAGING: string;
+    MENU_PRODUCTS: string;
+    TRADE_IN: string;
+    MY_TERMS_DEAL_SUMMARY: string;
+    TERMS: string;
+    EDIT_TERMS: string;
+};
